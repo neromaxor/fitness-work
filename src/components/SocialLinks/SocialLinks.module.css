@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.link {
+  font-size: 2.25rem;
+  color: white;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.link:hover {
+  transform: scale(1.1);
+}
+
+.link:nth-child(1):hover {
+  color: #60a5fa; /* Синій для Telegram */
+}
+
+.link:nth-child(2):hover {
+  color: #f472b6; /* Рожевий для Instagram */
+}
+
+.link:nth-child(3):hover {
+  color: #d1d5db; /* Сірий для TikTok */
+}
+
+@media (max-width: 768px) {
+  .link {
+    font-size: 1.75rem;
+  }
+}
