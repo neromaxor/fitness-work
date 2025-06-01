@@ -2,11 +2,11 @@
   display: flex;
   justify-content: center;
   gap: 1.5rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
 }
 
 .link {
-  font-size: 2.25rem;
+  font-size: 1.75rem;
   color: white;
   transition: color 0.3s ease, transform 0.2s ease;
 }
@@ -27,8 +27,27 @@
   color: #d1d5db; /* Сірий для TikTok */
 }
 
-@media (max-width: 768px) {
+/* Телефон */
+@media (max-width: 600px) {
   .link {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
+  }
+  .container {
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Планшет */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .link {
+    font-size: 2rem;
+  }
+}
+
+/* ПК */
+@media (min-width: 1025px) {
+  .link {
+    font-size: 2.25rem;
   }
 }

@@ -22,13 +22,21 @@
 .content {
   position: relative;
   z-index: 10;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 3rem;
 }
 
-@media (max-width: 768px) {
+/* Телефон */
+@media (max-width: 600px) {
   .content {
     padding: 1rem;
+  }
+}
+
+/* Планшет */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .content {
+    padding: 2rem;
   }
 }
