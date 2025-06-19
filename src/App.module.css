@@ -1,42 +1,85 @@
-.container {
+
+
+/* === Mobile 375px === */
+@media (max-width: 480px) {
+  .content {
+    padding: 16px;
+    gap: 24px;
+  }
+  .container {
+  position: relative;
   min-height: 100vh;
-  background-image: url('/background.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  color: white;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  overflow: hidden;
 }
 
 .overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(8px);
+  z-index: 1;
 }
 
 .content {
   position: relative;
-  z-index: 10;
-  max-width: 1200px;
+  z-index: 2;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 3rem;
+}
 }
 
-/* Телефон */
-@media (max-width: 600px) {
+/* === Tablet 768px === */
+@media (min-width:768px) {
   .content {
-    padding: 1rem;
+    padding: 32px;
+    gap: 32px;
   }
+ .container {
+  width: 100vw;              /* ширина на всю ширину вікна */   
+  background-size: cover; 
+  }
+  .container {
+  position: relative;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
 }
 
-/* Планшет */
-@media (min-width: 601px) and (max-width: 1024px) {
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+}
+
+/* === Desktop 1440px+ === */
+@media (min-width: 1025px) {
   .content {
-    padding: 2rem;
+    padding: 64px 80px;
+    gap: 48px;
   }
 }

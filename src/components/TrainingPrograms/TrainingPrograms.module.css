@@ -1,98 +1,81 @@
 .container {
-  margin-bottom: 3rem;
+  text-align: center;
+  padding: 40px 20px;
 }
 
 .title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  text-align: center;
-  margin-bottom: 1.5rem;
+  font-size: 28px;
+  color: #fff;
+  margin-bottom: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
+/* Сітка карток */
 .grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
+  gap: 20px;
 }
 
+/* Картка */
 .card {
-  background-color: rgba(255, 255, 255, 0.2);
-  padding: 1rem;
-  border-radius: 0.5rem;
-  text-align: center;
-  transition: transform 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  color: #fff;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
 }
 
 .cardTitle {
-  font-size: 1rem;
-  font-weight: 700;
-  margin-bottom: 0.75rem;
+  font-size: 20px;
+  margin-bottom: 15px;
+  font-weight: 600;
 }
 
 .button {
   display: inline-block;
-  background-color: #2563eb;
-  color: white;
-  font-weight: 600;
-  padding: 0.5rem 1rem;
-  border-radius: 0.25rem;
+  background-color: #00c896;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
   text-decoration: none;
-  transition: background-color 0.3s ease;
+  font-weight: 600;
+  transition: background-color 0.3s;
 }
 
 .button:hover {
-  background-color: #1d4ed8;
+  background-color: #00aa7c;
 }
 
-/* Телефон */
-@media (max-width: 600px) {
-  .title {
-    font-size: 1.25rem;
-  }
-  .card {
-    padding: 0.75rem;
-  }
-  .cardTitle {
-    font-size: 0.875rem;
-  }
-  .button {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.875rem;
-  }
-}
-
-/* Планшет */
-@media (min-width: 601px) and (max-width: 1024px) {
+/* === Mobile 375px === */
+@media (max-width: 480px) {
   .grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
   .title {
-    font-size: 1.875rem;
-  }
-  .card {
-    padding: 1.25rem;
+    font-size: 22px;
   }
   .cardTitle {
-    font-size: 1.125rem;
+    font-size: 18px;
   }
 }
 
-/* ПК */
+/* === Tablet 768px === */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* === Desktop 1440px+ === */
 @media (min-width: 1025px) {
   .grid {
     grid-template-columns: repeat(3, 1fr);
-  }
-  .title {
-    font-size: 2.25rem;
-  }
-  .card {
-    padding: 1.5rem;
-  }
-  .cardTitle {
-    font-size: 1.25rem;
   }
 }

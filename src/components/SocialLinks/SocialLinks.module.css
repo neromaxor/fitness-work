@@ -1,53 +1,53 @@
 .container {
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
-  margin-bottom: 2.5rem;
+  gap: 20px;
+  margin-top: 20px;
 }
 
+/* Іконки */
 .link {
-  font-size: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1);
   color: white;
-  transition: color 0.3s ease, transform 0.2s ease;
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 .link:hover {
+  background-color: rgba(255, 255, 255, 0.3);
   transform: scale(1.1);
 }
 
-.link:nth-child(1):hover {
-  color: #60a5fa; /* Синій для Telegram */
-}
-
-.link:nth-child(2):hover {
-  color: #f472b6; /* Рожевий для Instagram */
-}
-
-.link:nth-child(3):hover {
-  color: #d1d5db; /* Сірий для TikTok */
-}
-
-/* Телефон */
-@media (max-width: 600px) {
+/* === Mobile 375px === */
+@media (max-width: 480px) {
   .link {
-    font-size: 1.5rem;
-  }
-  .container {
-    gap: 1rem;
-    margin-bottom: 2rem;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
   }
 }
 
-/* Планшет */
-@media (min-width: 601px) and (max-width: 1024px) {
+/* === Tablet 768px === */
+@media (min-width: 481px) and (max-width: 1024px) {
   .link {
-    font-size: 2rem;
+    font-size: 24px;
+    width: 48px;
+    height: 48px;
   }
 }
 
-/* ПК */
+/* === Desktop 1440px+ === */
 @media (min-width: 1025px) {
   .link {
-    font-size: 2.25rem;
+    font-size: 28px;
+    width: 56px;
+    height: 56px;
   }
 }
