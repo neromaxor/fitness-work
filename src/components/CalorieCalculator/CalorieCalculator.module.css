@@ -53,7 +53,7 @@
   cursor: pointer;
   margin-top: 10px;
   transition: background-color 0.3s;
-}
+}v
 
 .button:hover {
   background-color: #00aa7c;
