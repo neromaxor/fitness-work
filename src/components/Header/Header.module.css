@@ -1,51 +1,63 @@
-.header {
-  text-align: center;
-  padding: 20px 0;
-}
-
-/* Заголовок */
-.title {
-  font-size: 28px;
+.dodatok {
+  display: inline-block;
+  padding: 12px 22px;
+  margin: 0 10px;
+  font-size: 18px;
   font-weight: 700;
-  color: #fff;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-  letter-spacing: 1px;
+  color: #222; /* темно-сірий, майже чорний */
+  background-color: #cce4ff; /* світло-блакитний фон */
+  border: 2px solid #1a73e8; /* синій бордер */
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(26, 115, 232, 0.2);
+  transition: 
+    background-color 0.3s ease, 
+    color 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+  cursor: pointer;
+  user-select: none;
 }
 
-/* Підзаголовок */
-.subtitle {
-  font-size: 16px;
-  color: #ccc;
-  font-weight: 400;
+.dodatok:hover,
+.dodatok:focus {
+  background-color: #1a73e8; /* насичений синій */
+  color: #fff; /* білі букви */
+  border-color: #155ab6;
+  box-shadow: 0 4px 12px rgba(26, 115, 232, 0.6);
+  outline: none;
 }
 
-/* === Mobile 375px === */
+.dodatok:active {
+  background-color: #155ab6;
+  color: #e0eaff;
+  border-color: #0f3a7a;
+  box-shadow: 0 2px 6px rgba(21, 90, 182, 0.8);
+}
+
+/* Адаптивність для мобільних */
 @media (max-width: 480px) {
-  .title {
-    font-size: 22px;
-  }
-  .subtitle {
-    font-size: 14px;
+  .dodatok {
+    font-size: 16px;
+    padding: 10px 18px;
+    margin: 0 6px;
   }
 }
 
-/* === Tablet 768px === */
+/* Адаптивність для планшетів */
 @media (min-width: 481px) and (max-width: 1024px) {
-  .title {
-    font-size: 32px;
-  }
-  .subtitle {
-    font-size: 18px;
+  .dodatok {
+    font-size: 17px;
+    padding: 11px 20px;
+    margin: 0 8px;
   }
 }
 
-/* === Desktop 1440px+ === */
+/* Адаптивність для десктопів */
 @media (min-width: 1025px) {
-  .title {
-    font-size: 42px;
-  }
-  .subtitle {
-    font-size: 20px;
+  .dodatok {
+    font-size: 18px;
+    padding: 12px 22px;
+    margin: 0 10px;
   }
 }
