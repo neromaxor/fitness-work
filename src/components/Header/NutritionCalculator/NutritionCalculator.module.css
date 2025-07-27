@@ -3,13 +3,13 @@
   max-width: 480px;
   margin: 40px auto;
   padding: 20px;
-  background: #ffffff; /* суцільний білий фон */
+  background: #ffffff;
   border-radius: 16px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   font-family: 'Arial', sans-serif;
-  min-height: 420px; /* мінімальна висота */
+  min-height: 420px;
   transition: min-height 0.3s ease;
-  color: #222; /* темний текст */
+  color: #222;
 }
 
 .title {
@@ -19,26 +19,37 @@
   margin-bottom: 16px;
   color: #222;
 }
-.selected {
-  position: relative;
-  z-index: 5;
+
+.searchContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
-.search {
-  width: 100%;
-  padding: 10px 12px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
+.searchSection {
+  flex: 1;
+  text-align: center;
+  background: #faf7f7;
   border-radius: 8px;
-  outline: none;
-  transition: border-color 0.2s ease;
-  box-sizing: border-box;
-  color: #222;
-  background-color: #fff;
+  color: #fff;
+  margin: 0 5px;
 }
 
-.search:focus {
+.searchInput {
+  width: 100%;
+  font-size: 1rem;
+  padding: 15px 0px ;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  color: #222;
+  background: #fff;
+  text-align: center;
+}
+
+.searchInput:focus {
   border-color: #8b5cf6;
+  box-shadow: 0 0 5px #8b5cf6;
 }
 
 /* Блок результатів */
@@ -62,6 +73,23 @@
 .results::-webkit-scrollbar-thumb {
   background: #bbb;
   border-radius: 4px;
+}
+
+.backBtn {
+  display: inline-block;
+  background: #8b5cf6;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background 0.2s ease;
+}
+
+.backBtn:hover {
+  background: #6d28d9;
 }
 
 .resultItem {

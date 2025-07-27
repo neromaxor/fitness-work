@@ -1,12 +1,13 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"; // якщо використовуєш React Router
 import css from "./NutritionCalculator.module.css";
-import productsDB from "./productsDB"; // шлях до твого productsDB.js
+import productsDB from "./productsDB";
 
 function NutritionCalculator() {
   const [search, setSearch] = useState("");
   const [selectedProducts, setSelectedProducts] = useState([]);
+  const navigate = useNavigate();
 
-  // Фільтр продуктів
   const filteredProducts = productsDB.flatMap(cat =>
     cat.items
       .filter(item =>
@@ -19,10 +20,9 @@ function NutritionCalculator() {
     if (!selectedProducts.find(p => p.name === product.name)) {
       setSelectedProducts([...selectedProducts, { ...product, grams: 100 }]);
     }
-    setSearch(""); // Очищення пошуку після додавання
+    setSearch("");
   };
 
-  
   const updateGrams = (name, grams) => {
     setSelectedProducts(
       selectedProducts.map(p =>
@@ -35,7 +35,6 @@ function NutritionCalculator() {
     setSelectedProducts(selectedProducts.filter(p => p.name !== name));
   };
 
-  // Підрахунок сумарних БЖУ та калорій
   const totals = selectedProducts.reduce(
     (acc, product) => {
       const factor = product.grams / 100;
@@ -50,19 +49,25 @@ function NutritionCalculator() {
 
   return (
     <div className={css.container}>
-      
+      {/* Кнопка назад */}
+      <button className={css.backBtn} onClick={() => navigate("/")}>
+        ← Назад на головний екран
+      </button>
+
       <h2 className={css.title}>Підрахунок БЖУ та калорій</h2>
 
-      {/* Пошук */}
-      <input
-        type="text"
-        placeholder="Пошук продуктів..."
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-        className={css.search}
-      />
+      <div className={css.searchContainer}>
+        <div className={css.searchSection}>
+          <input
+            type="text"
+            placeholder="Пошук продуктів..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className={css.searchInput}
+          />
+        </div>
+      </div>
 
-      {/* Результати пошуку */}
       {search && (
         <div className={css.results}>
           {filteredProducts.length > 0 ? (
@@ -78,7 +83,6 @@ function NutritionCalculator() {
         </div>
       )}
 
-      {/* Обрані продукти */}
       {selectedProducts.length > 0 && (
         <div className={css.selected}>
           <h3>Обрані продукти:</h3>
@@ -100,16 +104,13 @@ function NutritionCalculator() {
         </div>
       )}
 
-      {/* Підсумок */}
-      {selectedProducts.length > 0 && (
-        <div className={css.summary}>
-          <h3>Підсумок:</h3>
-          <p>Білки: {totals.protein.toFixed(1)} г</p>
-          <p>Жири: {totals.fat.toFixed(1)} г</p>
-          <p>Вуглеводи: {totals.carbs.toFixed(1)} г</p>
-          <p>Калорії: {totals.kcal.toFixed(1)} ккал</p>
-        </div>
-      )}
+      <div className={css.summary}>
+        <h3>Підсумок:</h3>
+        <p>Білки: {totals.protein.toFixed(1)} г</p>
+        <p>Жири: {totals.fat.toFixed(1)} г</p>
+        <p>Вуглеводи: {totals.carbs.toFixed(1)} г</p>
+        <p>Калорії: {totals.kcal.toFixed(1)} кал</p>
+      </div>
     </div>
   );
 }
