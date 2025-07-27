@@ -1,0 +1,207 @@
+.container {
+  position: relative;
+  max-width: 480px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffff; /* суцільний білий фон */
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+  min-height: 420px; /* мінімальна висота */
+  transition: min-height 0.3s ease;
+  color: #222; /* темний текст */
+}
+
+.title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 16px;
+  color: #222;
+}
+.selected {
+  position: relative;
+  z-index: 5;
+}
+
+.search {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+  color: #222;
+  background-color: #fff;
+}
+
+.search:focus {
+  border-color: #8b5cf6;
+}
+
+/* Блок результатів */
+.results {
+  position: absolute;
+  width: calc(100% - 40px);
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  margin-top: 5px;
+  max-height: 220px;
+  overflow-y: auto;
+  z-index: 10;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.results::-webkit-scrollbar {
+  width: 6px;
+}
+
+.results::-webkit-scrollbar-thumb {
+  background: #bbb;
+  border-radius: 4px;
+}
+
+.resultItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  font-size: 0.95rem;
+  border-bottom: 1px solid #f0f0f0;
+  color: #222;
+}
+
+.resultItem:last-child {
+  border-bottom: none;
+}
+
+.resultItem button {
+  background: #8b5cf6;
+  border: none;
+  color: #fff;
+  font-size: 0.85rem;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.resultItem button:hover {
+  background: #6d28d9;
+}
+
+.noResults {
+  padding: 10px;
+  text-align: center;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+/* Обрані продукти */
+.selected {
+  margin-top: 20px;
+  color: #222;
+}
+
+.selected h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.productRow {
+  display: grid;
+  grid-template-columns: 1.5fr 70px repeat(4, 60px) 40px;
+  gap: 6px;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 0.9rem;
+  color: #222;
+}
+
+.productRow input {
+  width: 100%;
+  padding: 4px;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  box-sizing: border-box;
+  color: #222;
+}
+
+.productRow button {
+  background: #ef4444;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  padding: 4px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.productRow button:hover {
+  background: #dc2626;
+}
+
+/* Підсумок */
+.summary {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  border: 1px solid #e5e5e5;
+  font-size: 0.95rem;
+  color: #222;
+}
+
+.summary h3 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+  .container {
+    max-width: 90%;
+    padding: 16px;
+  }
+
+  .productRow {
+    grid-template-columns: 1fr 50px repeat(4, 50px) 30px;
+    font-size: 0.85rem;
+  }
+
+  .title {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .productRow {
+    grid-template-columns: 1fr 40px 40px;
+    grid-template-areas:
+      "name grams delete"
+      "b b b"
+      "f f f"
+      "c c c"
+      "k k k";
+    font-size: 0.8rem;
+    row-gap: 4px;
+  }
+
+  .productRow span:nth-child(3) { grid-area: b; }
+  .productRow span:nth-child(4) { grid-area: f; }
+  .productRow span:nth-child(5) { grid-area: c; }
+  .productRow span:nth-child(6) { grid-area: k; }
+
+  .summary {
+    font-size: 0.85rem;
+  }
+}

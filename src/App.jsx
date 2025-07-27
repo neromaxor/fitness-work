@@ -11,6 +11,7 @@ import CalorieCalculator from './components/CalorieCalculator/CalorieCalculator'
 import TrainingTimer from './components/Header/TrainingTimer/TrainingTimer';
 import TrainingDiary from './components/Header/TrainingDiary/TrainingDiary';
 import Articles from './components/Header/Articles/Articles';
+import NutritionCalculator from './components/Header/NutritionCalculator/NutritionCalculator';
 
 export default function App() {
   return (
@@ -31,6 +32,7 @@ export default function App() {
             <Route path="/timer" element={<TrainingTimer />} />
             <Route path="/diary" element={<TrainingDiary />} />
             <Route path="/articles" element={<Articles />} />
+            <Route path="/nutrition" element={<NutritionCalculator/>} />
           </Routes>
         </Suspense>
       </div>
