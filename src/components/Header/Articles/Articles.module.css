@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@400;600;700&display=swap');
+
+.backBtn {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #ffffff;
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+}
+
+.backBtn:hover {
+  opacity: 0.7;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+  color: white;
+  font-family: 'Inter', sans-serif;
+}
+
+.title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.article {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 20px;
+  border-radius: 14px;
+  margin-bottom: 25px;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.articleTitle {
+  font-size: 22px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 10px;
+}
+
+.text {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.list {
+  padding-left: 20px;
+  margin: 10px 0;
+}
+
+.list li {
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+/* Мобільна адаптація */
+@media (max-width: 480px) {
+  .container {
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+
+  .articleTitle {
+    font-size: 20px;
+  }
+}
