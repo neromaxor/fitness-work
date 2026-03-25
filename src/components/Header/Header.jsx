@@ -10,8 +10,8 @@ function Header() {
       <Link className={css.dodatok} to="/diary">Щоденник</Link>
       <Link className={css.dodatok} to="/articles">Статті</Link>
       <Link className={css.dodatok} to="/nutrition">БЖУ Підрахунок</Link>
-      <h1 className={css.title}>Фітнес з Владсиславом Музика</h1>
-      <p className={css.subtitle}>Досягай своїх цілей разом зі мною!</p>
+      <h1 className={css.title}>Персональний тренер Владислав </h1>
+      <p className={css.subtitle}>Трансформація починається тут</p>
     </header>
   );
 }
